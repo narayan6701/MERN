@@ -1,4 +1,4 @@
-let banana = {
+module.exports = {
     name:"banana",
     color:"yellow"
 }
