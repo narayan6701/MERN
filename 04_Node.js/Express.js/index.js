@@ -23,3 +23,9 @@ app.listen(port, () => {
 });
 
 // app.listen is a method that listens for incoming requests on a specific port. It has two parameters, the first one is the port number and the second one is a callback function that will be called when the app starts listening on the given port.
+
+app.use((req, res)=>{
+    console.log("we got a request");
+});
+
+// app.use is a method in Express.js used to set up middleware functions. Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application's request-response cycle. These functions can perform various tasks, such as modifying the request or response objects, ending the request-response cycle, or calling the next middleware function in the stack.
