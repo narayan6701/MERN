@@ -21,3 +21,5 @@ let port = 3000; //8080
 app.listen(port, () => {
     console.log(`app listening on the port ${port}`);
 });
+
+// app.listen is a method that listens for incoming requests on a specific port. It has two parameters, the first one is the port number and the second one is a callback function that will be called when the app starts listening on the given port.
