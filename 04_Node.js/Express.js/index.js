@@ -12,7 +12,7 @@ console.dir(app);
 
 // app.listen is a method that listens for incoming requests on a specific port
 
-let port = 3000; //8080
+let port = 8080; //3000
 
 // a port is a logical communication endpoint used to exchange information between a web server and a web client. It is a numerical value that identifies a specific process or service on a server. When a server listens on a port, it is waiting for incoming network requests directed to that port.
 
