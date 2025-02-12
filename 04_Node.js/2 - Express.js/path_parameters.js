@@ -9,8 +9,15 @@ app.listen(port, () => {
 
 app.get("/",(req, res) => {
     res.send("hello ! I am the root route");
-})
+});
 
+//query string parameters
+// Query string parameters are used to capture the values in the URL after the question mark. The values are stored in the req.query object.
+
+app.get("/search",(req,res)=>{
+    console.log(req.query);
+    res.send("Search route string value = " + req.query);
+});
 
 // Path parameters
 
