@@ -15,6 +15,7 @@ app.get("/",(req, res) => {
 // Path parameters
 
 // Path parameters are used to capture the values in the URL. Here we use colon(:) after the route and then we have a variable name. The value of that variable will be captured from the URL (in the req parameter of the callback function).
+
 app.get("/:username", (req,res) => {
     console.log(req.params);
     console.log(req.params.username);
@@ -22,8 +23,7 @@ app.get("/:username", (req,res) => {
 });
 
 app.get("/:username/:age", (req,res) => {
-    console.log(req.params);
-    console.log(req.params.username);
-    console.log(req.params.age);
+    
     res.send(`Hello ${req.params.username}, your age is ${req.params.age}`);
-})
+});
+
