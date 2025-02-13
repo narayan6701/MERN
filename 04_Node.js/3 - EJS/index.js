@@ -40,6 +40,12 @@ app.get("/rolldice", (req, res) => {
   res.render("rolldice.ejs", { dataVal });
 });
 
+app.get("/ig/:username", (req,res)=>{
+    let {username} = req.params;
+    console.log(username);
+    res.render("instagram.ejs", {username});
+});
+
 // Handle invalid routes
 app.use((req, res) => {
   res.status(404).send("404 Not Found");
