@@ -11,6 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 
 // path.join is used to join the current directory with the views folder. This is done to make sure that the views folder is accessible from any directory.
 
+// view engine is used to set the template engine that we are using. In this case, we are using ejs as the template engine.
 app.set("view engine", "ejs");
 // app.get("/", (req, res) =>{
 //     res.send("this is home");
@@ -37,7 +38,7 @@ app.get("/hello", (req, res) => {
 app.get("/rolldice", (req, res) => {
   let dataVal = Math.floor(Math.random() * 6) + 1;
   res.render("rolldice.ejs",{dice:dataVal}); 
-  res.render("rolldice.ejs", { dataVal });
+  // res.render("rolldice.ejs", { dataVal });
 });
 
 app.get("/ig/:username", (req,res)=>{

@@ -8,6 +8,9 @@
   <body>
     <!-- <h1>Dice gave value : <%= Math.floor(Math.random()*6)+1     %></h1> -->
     <!-- <h1>Dice gave : <%= dice %></h1> -->
-    <!-- <h1>Dice gave : <%= dataVal %></h1> -->
+    <h1>Dice gave : <%= dice %></h1>
+     <% if(dice==6){ %>
+        <h2>Roll Dice again</h2>
+     <% } %>
   </body>
 </html>
