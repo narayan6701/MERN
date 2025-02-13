@@ -30,7 +30,17 @@ app.get("/hello", (req, res) => {
   res.send("this is help page");
 });
 
+// Passing data to the EJS file.
+// we can pass data to the ejs file by passing an object as the second argument to the render function.
+//now we can directly use the key name in the ejs file to access the value of the key.
+
+app.get("/rolldice", (req, res) => {
+  let dataVal = Math.floor(Math.random() * 6) + 1;
+  res.render("rolldice.ejs",{dice:dataVal}); 
+  res.render("rolldice.ejs", { dataVal });
+});
+
 // Handle invalid routes
 app.use((req, res) => {
-    res.status(404).send("404 Not Found");
-  });
+  res.status(404).send("404 Not Found");
+});
