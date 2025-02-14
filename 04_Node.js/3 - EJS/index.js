@@ -42,9 +42,10 @@ app.get("/rolldice", (req, res) => {
 });
 
 app.get("/ig/:username", (req,res)=>{
+    const followers = ["john", "doe", "jane", "abc"];
     let {username} = req.params;
     console.log(username);
-    res.render("instagram.ejs", {username});
+    res.render("instagram.ejs", {username, followers});
 });
 
 // Handle invalid routes
