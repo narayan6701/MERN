@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Home Page of Instagram</h1>
+    <h2>This page belongs to <%= data.name %></h2>
+
+    <p>Followers <%= data.followers %></p>
+    &nbsp;
+    <p>Following <%= data.following %></p>
+
+    <hr />
+
+    <% for(post of data.posts){ %>
+    <img src="<%=post.image%>" alt="" />
+    <p>Like : <%post.likes%></p>
+    <p>Comments : <%=post.comments%></p>
+    <% } %>
+  </body>
+</html>
