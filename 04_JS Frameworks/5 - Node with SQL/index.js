@@ -7,16 +7,14 @@ const connection = mysql.createConnection({
     database: 'delta_app',
     password: '2001',
 });
-
-let q = "SHOW TABLES"
+//inserting new data
+let q = "INSERT INTO user(id, username, email, password)VALUES ?";
+let users =  [["13b", "12_newuserb", "ab@gmail.comb", "abcb"], ["13c", "12_newuserc", "ab@gmail.comc", "abcc"]];
 
 try{
-    connection.query(q, (err, result) => {
+    connection.query(q, [users], (err, result) => {
         if(err) throw err;
         console.log(result);
-        console.log(result.length);
-        console.log(result[0]);
-        console.log(result[1]);
     });
 }
 catch(err){
@@ -26,11 +24,11 @@ catch(err){
 connection.end();
 
 
-let createRandomUser = () => {
-    return {
-      id: faker.string.uuid(),
-      username: faker.internet.username(), 
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-    };
+let getRandomUser = () => {
+    return [
+        faker.string.uuid(),
+        faker.internet.username(), 
+        faker.internet.email(),
+        faker.internet.password(),
+    ];
 };
