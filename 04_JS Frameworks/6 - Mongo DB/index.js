@@ -51,8 +51,24 @@ const User = mongoose.model("User", userSchema);
 //   console.log(res);
 // });
 
-User.find({age:{$gt:47}}).then((res) => {
-  console.log(res);
-}).catch((err) => {
-  console.log(err);
-});
+// User.find({age:{$gt:47}}).then((res) => {
+//   console.log(res);
+// }).catch((err) => {
+//   console.log(err);
+// });
+
+User.updateOne({ name: "Tony" }, { age: 49 })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+User.updateMany({age:{$gt:1}}, {age: 100})
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
