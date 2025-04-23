@@ -43,7 +43,7 @@ const User = mongoose.model("User", userSchema);
 // 	console.log(err)
 // });
 
-// User.insertMany([
+// User.insertMany([f
 //   {name:"Tony", emal:"tony@gmail.com", age:50},
 //   {name: "Peter", email:"peter@gmail.com", age:30},
 //   {name:"Bruce", email:"bruce@gmail.com", age:40}
