@@ -3,13 +3,17 @@ const app = express();
 
 // Middleware sends response immediately
 
-app.use((req,res)=> {
-    let {query} = req.query;
-    console.log("Query parameter:", query);
-    console.log("Middleware executed");
-    res.send("Response from middleware");
+app.use((req,res, next)=> {
+    console.log("Middleware 1 executed");
+    next();
+    // console.log("this is after next in Middleware 1");
+    // return next();
 });
 
+app.use((req, res, next) => {
+    console.log("Middleware 2 executed");
+    next();
+}); 
 
 app.get("/", (req, res) => {
     res.send("hi i am root");
