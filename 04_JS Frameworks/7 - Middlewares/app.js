@@ -21,12 +21,21 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use("/random", (req, res, next) => {
+    console.log("I am only for /random");
+    next();
+});
+
 app.get("/", (req, res) => {
     res.send("hi i am root");
 })
 
 app.get("/random", (req,res) => {
     res.send("Random response");
+});
+
+app.use((req, res)=>{
+    res.send("404 - Not Found");
 });
 app.listen(8080, () => {
   console.log('Server is running on port 8080');
