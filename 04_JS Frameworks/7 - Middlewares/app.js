@@ -25,8 +25,7 @@ const app = express();
 //     console.log("I am only for /random");
 //     next();
 // });
-
-app.use("/api", (req, res, next) => {
+const checkToken =  (req, res, next) => {
     let {token} = req.query;
     if(token === "giveaccess"){
         next();
@@ -34,9 +33,9 @@ app.use("/api", (req, res, next) => {
     else{
         res.send("Access Denied");
     }
-});
+};
 
-app.get("/api", (req, res) => {
+app.get("/api", checkToken, (req, res) => {
     res.send("data");
 });
 
